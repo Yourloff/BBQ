@@ -1,10 +1,24 @@
-<p style="color: green"><%= notice %></p>
+<div class="text-center">
+  <h1><%= @user.name %></h1>
 
-<%= render @user %>
+  <%= image_tag user_avatar(@user) %>
 
-<div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
-
-  <%= button_to "Destroy this user", @user, method: :delete %>
+  <% if @user == current_user %>
+    <p class="buffer-top">
+      <%= link_to "Редактировать профиль", edit_user_path(@user),
+                  class: 'btn btn-light' %>
+    </p>
+  <% end %>
+  <div class="row">
+    <div class="col-md-12">
+      <% if @user.events.any? %>
+        <h3 class="buffer-bottom">Организовал:</h3>
+        <div class="row">
+          <%= render partial: 'events/event', collection: @user.events %>
+        </div>
+      <% else %>
+        <p class="buffer-top">Пользователь пока не организовал ни одного события</p>
+      <% end %>
+    </div>
+  </div>
 </div>

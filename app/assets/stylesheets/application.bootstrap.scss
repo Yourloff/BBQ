@@ -1,2 +1,66 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
+@import 'events';
+
+.form-group {
+  margin-bottom: 1em;
+}
+
+/* Buffers */
+.buffer-top {
+  margin-top: 10px;
+}
+
+.buffer-bottom {
+  margin-bottom: 20px;
+}
+
+.buffer-both {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+/* Avatars for users & events */
+.img-icon, .img-icon-small {
+  height: 50px;
+  width: auto;
+  border-radius: 50%;
+}
+
+/* Thumbnails for events/index */
+.thumbnail {
+  position: relative;
+  background: transparent;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.thumbnail h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  margin-top: 0;
+  margin-bottom: .3em;
+}
+
+.thumbnail-inner {
+  padding: 1rem;
+}
+
+.banner-text {
+  position: absolute;
+  bottom: 0;
+  left: 2%;
+  color: #fff;
+  font: bold 24px/45px Helvetica, Sans-Serif;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+  .thumbnail {
+    margin-bottom: 2em;
+  }
+}
+
