@@ -4,4 +4,4 @@
 
 <%= link_to 'Превью', @event %> |
 <%= link_to 'Назад', events_path %>
-
+<%= button_to 'Удалить', event_path(@event), class: 'btn btn-danger', method: :delete %>
