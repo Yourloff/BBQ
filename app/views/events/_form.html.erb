@@ -1,23 +1,23 @@
 <%= form_for(@event) do |f| %>
-  <%= render partial: 'partials/form_errors', locals: { model: @event } %>
+  <%= render partial: 'partials/form_errors', locals: { errors: @event.errors } %>
 
   <div class="form-group">
-    <%= f.label :title, 'Название' %>
+    <%= f.label :title %>
     <%= f.text_field :title, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :address, 'Адрес' %>
+    <%= f.label :address %>
     <%= f.text_field :address, class: 'form-control' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :datetime, 'Время начала мероприятия' %>
+    <%= f.label :datetime %>
     <p><%= f.datetime_select :datetime, class: 'form-control' %></p>
   </div>
 
   <div class="form-group">
-    <%= f.label :description, 'Описание' %>
+    <%= f.label :description %>
     <%= f.text_area :description, class: 'form-control' %>
   </div>
 

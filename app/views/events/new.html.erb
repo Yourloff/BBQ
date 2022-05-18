@@ -1,7 +1,5 @@
 <h1>Новое событие</h1>
 
-<div class="row">
-  <div class="col-md-6 buffer-top">
-    <%= render 'form' %>
-  </div>
-</div>
+<%= render 'form' %>
+
+<%= link_to 'Показать', @event %>|<%= link_to 'Назад', events_path %>

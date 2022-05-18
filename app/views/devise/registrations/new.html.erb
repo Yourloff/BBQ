@@ -5,8 +5,8 @@
   <%= form_for(resource, as: resource_name, data: { turbo: false }, url: registration_path(resource_name)) do |f| %>
 
     <div class="mb-3">
-      <%= f.label :email, 'Email:', for: 'email', class: 'form-label' %>
-      <%= f.email_field :email, type: 'email', class: 'form-control', id: 'emailHelp', autofocus: true, autocomplete: "email" %>
+      <%= f.label :email, 'Email:', class: 'form-label' %>
+      <%= f.email_field :email, class: 'form-control', autofocus: true, autocomplete: "email" %>
       <div id="emailHelp" class="form-text">
         <span>Мы никогда не передадим вашу электронную почту кому-либо еще.</span>
       </div>

@@ -2,6 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Превью', @event %> |
-<%= link_to 'Назад', events_path %>
+<%= link_to 'Показать', @event %>
 <%= button_to 'Удалить', event_path(@event), class: 'btn btn-danger', method: :delete %>
