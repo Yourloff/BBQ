@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Показать', @event %>
-<%= button_to 'Удалить', event_path(@event), class: 'btn btn-danger', method: :delete %>
+<%= button_to 'Удалить', event_path(@event), form: { data: { turbo_confirm: I18n.t(:'devise.registrations.edit.are_you_sure') } }, class: 'btn btn-danger', method: :delete %>
