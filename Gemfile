@@ -5,6 +5,7 @@ ruby '3.0.3'
 
 gem 'devise'
 gem 'devise-i18n'
+gem 'rails-i18n'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
 gem 'russian'
 gem 'sprockets-rails'
