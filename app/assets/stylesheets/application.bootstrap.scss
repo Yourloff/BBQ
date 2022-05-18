@@ -1,6 +1,11 @@
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import 'events';
+@import 'forms';
+
+.container {
+  margin-top: 2em;
+}
 
 .form-group {
   margin-bottom: 1em;
