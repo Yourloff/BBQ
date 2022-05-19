@@ -1,6 +1,6 @@
 <% if resource.errors.any? %>
   <div id="error_explanation">
-    <h4 class="my-2" style="color: #842029;">
+    <h4 style="color: #730E15;" class="my-3">
       <%= I18n.t("views.errors",
                  count: resource.errors.count)
       %>
@@ -8,7 +8,6 @@
     <% resource.errors.each do |message| %>
       <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-
         <%= message.full_message %>
       </div>
     <% end %>
