@@ -1,14 +1,15 @@
 <h2>Вход</h2>
 
 <%= form_for(resource, as: resource_name, data: { turbo: false }, url: session_path(resource_name)) do |f| %>
+  <%= render partial: 'partials/form_errors', locals: { errors: @user.errors } %>
 
   <div class="mb-3">
-    <%= f.label :email, class: 'form-label' %><br/>
+    <%= f.label :email, class: 'form-label' %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', 'aria-describedby': 'emailHelp' %>
   </div>
 
   <div class="mb-3">
-    <%= f.label :password, class: 'form-label' %><br/>
+    <%= f.label :password, class: 'form-label' %>
     <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
   </div>
 

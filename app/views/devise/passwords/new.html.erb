@@ -1,10 +1,10 @@
 <h2>Забыли свой пароль?</h2>
 
 <%= form_for(resource, as: resource_name, data: { turbo: false }, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= render "devise/shared/error_messages", resource: @user %>
 
   <div class="mb-3">
-    <%= f.label :email, class: "form-label" %><br/>
+    <%= f.label :email, class: "form-label" %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
   </div>
 

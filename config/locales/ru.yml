@@ -45,6 +45,12 @@ ru:
       destroyed: Событие удалено
     users:
       updated: Вы обновили профиль
+  views:
+    errors:
+      few: "В форме %{count} ошибки:"
+      many: "В форме %{count} ошибок:"
+      one: "В форме %{count} ошибка:"
+      other: "В форме %{count} ошибки:"
   app:
     name: Шашлыки
     company: Хорошие шашлыки
