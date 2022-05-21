@@ -4,6 +4,7 @@ class Subscription < ApplicationRecord
 
   with_options if: -> { user.present? } do
     validates :user, uniqueness: { scope: :event_id }
+    validate :event_host
   end
 
   with_options unless: -> { user.present? } do
@@ -24,6 +25,12 @@ class Subscription < ApplicationRecord
   def forbidden_to_use_email
     if User.find_by_email(self.user_email)
       errors.add(:email, 'уже существует')
+    end
+  end
+
+  def event_host
+    if user.eql?(event.user)
+      errors.add(:user_email, message: 'Вы не можете это сделать')
     end
   end
 end
