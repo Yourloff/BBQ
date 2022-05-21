@@ -3,8 +3,10 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.0.3'
 
+gem 'bootstrap-icons-helper'
 gem 'devise'
 gem 'devise-i18n'
+gem 'material_icons'
 gem 'rails-i18n'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
 gem 'russian'

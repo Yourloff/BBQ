@@ -1,3 +1,12 @@
-<div class="col-sm-6 col-lg-4">
-  <h3><%= link_to user.name, user_path(user) %></h3>
-</div>
+<span class="user">
+  <span class="user-avatar">
+    <%= image_tag(user_avatar(user), class: 'img_icon') %>
+  </span>
+  <span class="user-name">
+    <% if request.path == user_path(user) %>
+    <%= user.name %>
+      <% else %>
+    <%= link_to user.name, user_path(user) %>
+      <% end %>
+  </span>
+</span>

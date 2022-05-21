@@ -38,6 +38,8 @@ ru:
         address: Адрес
         datetime: Дата и время
         description: Описание
+      comment:
+        body: Сообщение
   controllers:
     events:
       created: Событие создано
@@ -45,6 +47,14 @@ ru:
       destroyed: Событие удалено
     users:
       updated: Вы обновили профиль
+    comments:
+      created: Комментарий добавлен
+      destroyed: Комментарий удален
+      error: Ошибка с комментарием
+    subscriptions:
+      created: Вы подписаны на это событие
+      destroyed: Участник отписан
+      error: Подписка/отписка не сработала
   views:
     errors:
       few: "В форме %{count} ошибки:"
@@ -54,6 +64,12 @@ ru:
   app:
     name: Шашлыки
     company: Хорошие шашлыки
+  comments:
+    comment:
+      destroy_confirm: Вы уверены, что хотите удалить этот комментарий?
+  subscriptions:
+    subscription:
+      destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
   devise:
     confirmations:
       confirmed: Ваш адрес эл. почты успешно подтвержден.

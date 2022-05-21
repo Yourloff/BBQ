@@ -1,6 +1,14 @@
+# (с) goodprogrammer.ru
+#
+# Контроллер, управляющий событиями
 class EventsController < ApplicationController
+  # Встроенный в девайз фильтр - посылает незалогиненного пользователя
   before_action :authenticate_user!, except: [:show, :index]
+
+  # Задаем объект @event для экшена show
   before_action :set_event, only: [:show]
+
+  # Задаем объект @event от текущего юзера для других действий
   before_action :set_current_user_event, only: [:edit, :update, :destroy]
 
   def index
@@ -8,7 +16,8 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
+    @new_comment = @event.comments.build(params[:comment])
+    @new_subscription = @event.subscriptions.build(params[:subscription])
   end
 
   def new
@@ -43,12 +52,12 @@ class EventsController < ApplicationController
 
   private
 
-  def set_event
-    @event = Event.find(params[:id])
-  end
-
   def set_current_user_event
     @event = current_user.events.find(params[:id])
+  end
+
+  def set_event
+    @event = Event.find(params[:id])
   end
 
   def event_params
