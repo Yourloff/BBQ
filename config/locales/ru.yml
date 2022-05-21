@@ -39,7 +39,11 @@ ru:
         datetime: Дата и время
         description: Описание
       comment:
+        user_name: Имя
         body: Сообщение
+      subscription:
+        user_name: Имя
+        user_email: Email
   controllers:
     events:
       created: Событие создано
@@ -61,6 +65,9 @@ ru:
       many: "В форме %{count} ошибок:"
       one: "В форме %{count} ошибка:"
       other: "В форме %{count} ошибки:"
+    subscriptions:
+      subscription:
+        submit_text: Подписаться
   app:
     name: Шашлыки
     company: Хорошие шашлыки
