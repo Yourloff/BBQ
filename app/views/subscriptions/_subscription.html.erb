@@ -1,0 +1,16 @@
+<span class="subscription">
+  <% if subscription.user.present? %>
+    <%= render partial: 'users/user', object: subscription.user %>
+  <% else %>
+    <em><%= subscription.user_name %></em>
+  <% end %>
+  <% if current_user_can_edit?(subscription) %>
+    <%= button_to(
+          (bootstrap_icon 'x-lg'),
+          event_subscription_path(subscription.event, subscription),
+          method: :delete,
+          data: { confirm: t('.destroy_confirm') },
+          class: 'bg-transparent border-0', form_class: 'd-inline'
+        ) %>
+  <% end %>
+</span>
