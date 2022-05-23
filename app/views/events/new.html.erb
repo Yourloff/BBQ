@@ -1,5 +1,5 @@
-<h1>Новое событие</h1>
+<h1><%= I18n.t('views.events.new.header') %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Показать', @event %>|<%= link_to 'Назад', events_path %>
+<%= link_to I18n.t('views.back'), events_path %>

@@ -13,5 +13,4 @@ class Event < ApplicationRecord
   def visitors
     (subscribers + [user]).uniq
   end
-
 end

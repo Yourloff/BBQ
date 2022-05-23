@@ -11,7 +11,7 @@ class Subscription < ApplicationRecord
     validates :user_name, presence: true
     validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
     validates :user_email, uniqueness: { scope: :event_id }
-    validate :forbidden_to_use_email
+    validate :check_exist_email
   end
 
   def user_name
@@ -22,15 +22,17 @@ class Subscription < ApplicationRecord
     user&.email || super
   end
 
-  def forbidden_to_use_email
-    if User.find_by_email(self.user_email)
-      errors.add(:email, 'уже существует')
+  private
+
+  def check_exist_email
+    if User.find_by(email: user_email)
+      errors.add(:email, I18n.t('subscriptions.subscription.check_exist_email'))
     end
   end
 
   def event_host
-    if user.eql?(event.user)
-      errors.add(:user_email, message: 'Вы не можете это сделать')
+    if user == event.user
+      errors.add(:user_email, message: I18n.t('subscriptions.subscription.event_host'))
     end
   end
 end

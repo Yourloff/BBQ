@@ -8,6 +8,8 @@ ru:
         other: Пользователи
       event: Событие
       photo: Фотография
+      subscription:
+
     attributes:
       user:
         email: Email
@@ -68,6 +70,20 @@ ru:
       created: Вы добавили фотографию к событию
       destroyed: Вы удалили фотку
   views:
+    back: Назад
+    users:
+      edit:
+        header: Редактирование профиля
+        change_password: Сменить пароль
+      show:
+        organized: Организовал
+        not_organized: Не организовал ни одного события
+      save: Сохранить
+    application:
+      profile: Профиль
+      destroy: Выйти
+      new_session: Войти
+      registration: Регистрация
     errors:
       few: "В форме %{count} ошибки:"
       many: "В форме %{count} ошибок:"
@@ -76,6 +92,13 @@ ru:
     subscriptions:
       subscription:
         submit_text: Подписаться
+    events:
+      index:
+        create: Создать событие
+      new:
+        header: Новое событие
+    photos:
+      upload: Загрузить
   app:
     name: Шашлыки
     company: Хорошие шашлыки
@@ -85,6 +108,8 @@ ru:
   subscriptions:
     subscription:
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
+      check_exist_email: Занят
+      event_host: Нельзя подписаться на собственное мероприятие
   devise:
     confirmations:
       confirmed: Ваш адрес эл. почты успешно подтвержден.
