@@ -9,16 +9,16 @@
                   class: 'btn btn-light' %>
     </p>
   <% end %>
-  <div class="row">
-    <div class="col-md-12">
-      <% if @user.events.any? %>
-        <h3 class="buffer-bottom">Организовал:</h3>
-        <div class="row">
-          <%= render partial: 'events/event', collection: @user.events %>
-        </div>
-      <% else %>
-        <p class="buffer-top">Не организовал ни одного события</p>
-      <% end %>
-    </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <% if @user.events.any? %>
+      <h3 class="buffer-bottom">Организовал:</h3>
+      <div class="row">
+        <%= render partial: 'events/event', collection: @user.events %>
+      </div>
+    <% else %>
+      <p class="buffer-top">Не организовал ни одного события</p>
+    <% end %>
   </div>
 </div>

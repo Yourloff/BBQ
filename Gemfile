@@ -4,6 +4,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '3.0.3'
 
 gem 'bootstrap-icons-helper'
+gem 'carrierwave'
+gem "mini_magick"
 gem 'devise'
 gem 'devise-i18n'
 gem 'material_icons'

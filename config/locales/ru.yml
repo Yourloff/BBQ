@@ -1,17 +1,19 @@
 ru:
   activerecord:
     models:
-      user: Пользователь
+      user:
+        few: Пользователя
+        many: Пользователей
+        one: Пользователь
+        other: Пользователи
       event: Событие
-      few: Пользователя
-      many: Пользователей
-      one: Пользователь
-      other: Пользователи
+      photo: Фотография
     attributes:
       user:
         email: Email
         name: Имя
         password: Пароль
+        avatar: Аватарка
         password_confirmation: Подтверждение пароля
         confirmation_sent_at: Дата отправки подтверждения
         confirmation_token: Токен подтверждения
@@ -44,6 +46,8 @@ ru:
       subscription:
         user_name: Имя
         user_email: Email
+      photo:
+        photo: Фотография
   controllers:
     events:
       created: Событие создано
@@ -59,6 +63,10 @@ ru:
       created: Вы подписаны на это событие
       destroyed: Участник отписан
       error: Подписка/отписка не сработала
+    photos:
+      error: Что-то не так с фоткой
+      created: Вы добавили фотографию к событию
+      destroyed: Вы удалили фотку
   views:
     errors:
       few: "В форме %{count} ошибки:"
@@ -197,3 +205,10 @@ ru:
           many: "%{resource}: сохранение не удалось из-за %{count} ошибок:"
           one: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
           other: "%{resource}: сохранение не удалось из-за %{count} ошибки:"
+  errors:
+    messages:
+      carrierwave_processing _error: Не удается изменить размер изображения.
+      carrierwave_integrity_error: Нет изображения.
+      extension_whitelist_error: "Вам не разрешено загружать файлы %{extension},
+      разрешенные типы: %{allowed_types}"
+      mini_magick_processing_error: "Может быть, это не изображение?"

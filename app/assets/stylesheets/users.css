@@ -1,3 +1,4 @@
-.img_icon {
-  width: 5em;
+.user-avatar .img_icon {
+  margin-top: -2px;
+  height: 20px;
 }
