@@ -4,7 +4,7 @@ class Subscription < ApplicationRecord
 
   with_options if: -> { user.present? } do
     validates :user, uniqueness: { scope: :event_id }
-    validate :event_host
+    validate :cannot_subscribe_own_event
   end
 
   with_options unless: -> { user.present? } do
@@ -30,9 +30,9 @@ class Subscription < ApplicationRecord
     end
   end
 
-  def event_host
+  def cannot_subscribe_own_event
     if user == event.user
-      errors.add(:user_email, message: I18n.t('subscriptions.subscription.event_host'))
+      errors.add(:user_email, :event_host)
     end
   end
 end

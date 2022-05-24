@@ -107,6 +107,21 @@ ru:
       destroy_confirm: Вы уверены, что хотите удалить этот комментарий?
   subscriptions:
     subscription:
+      event_mailer:
+        comment:
+          title: 'Новый комментарий'
+          author: 'Автор'
+          event: 'Событие'
+          datetime: 'Состоится'
+          owner: 'Организатор'
+        subscription:
+          title: 'Новая подписка'
+          name: 'Имя'
+          email: 'Email'
+          author: 'Автор'
+          event: 'Событие'
+          datetime: 'Состоится'
+          owner: 'Организатор'
       destroy_confirm: 'Вы уверены, что хотите удалить эту подписку?'
       check_exist_email: Занят
       event_host: Нельзя подписаться на собственное мероприятие
