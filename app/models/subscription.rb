@@ -26,7 +26,7 @@ class Subscription < ApplicationRecord
 
   def check_exist_email
     if User.find_by(email: user_email)
-      errors.add(:email, I18n.t('subscriptions.subscription.check_exist_email'))
+      errors.add(:email, :taker_email)
     end
   end
 
