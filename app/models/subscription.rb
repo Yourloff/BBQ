@@ -24,15 +24,11 @@ class Subscription < ApplicationRecord
 
   private
 
-  def check_exist_email
-    if User.find_by(email: user_email)
-      errors.add(:email, :taker_email)
-    end
+  def cannot_subscribe_own_event
+    errors.add(:user_email, :own_event) if user == event.user
   end
 
-  def cannot_subscribe_own_event
-    if user == event.user
-      errors.add(:user_email, :event_host)
-    end
+  def check_exist_email
+    errors.add(:user_email, :can_not_use) if User.exists?(email: user_email)
   end
 end

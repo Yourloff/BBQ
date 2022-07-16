@@ -54,7 +54,7 @@
               ) %>
         </div>
       </div>
-      <% unless user_signed_in? %>
+      <% if user_signed_in? %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>
           <div>

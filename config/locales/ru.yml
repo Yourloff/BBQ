@@ -8,8 +8,14 @@ ru:
         other: Пользователи
       event: Событие
       photo: Фотография
-      subscription:
-
+      subscription: Подписка
+    errors:
+      models:
+        subscription:
+          attributes:
+            user_email:
+              own_event: Вы не можете подписаться на своё событие
+              can_not_use: Уже используется другим пользователем
     attributes:
       user:
         email: Email
