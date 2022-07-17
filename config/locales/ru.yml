@@ -48,6 +48,7 @@ ru:
         address: Адрес
         datetime: Дата и время
         description: Описание
+        pincode: Пинкод доступа
       comment:
         user_name: Имя
         body: Сообщение
@@ -61,6 +62,7 @@ ru:
       created: Событие создано
       updated: Событие обновлено
       destroyed: Событие удалено
+      wrong_pincode: Неверный пинкод!
     users:
       updated: Вы обновили профиль
     comments:

@@ -41,3 +41,4 @@ public/uploads/
 /node_modules
 
 .idea
+.env

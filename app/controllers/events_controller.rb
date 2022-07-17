@@ -1,15 +1,15 @@
-# (с) goodprogrammer.ru
-#
-# Контроллер, управляющий событиями
 class EventsController < ApplicationController
   # Встроенный в девайз фильтр - посылает незалогиненного пользователя
-  before_action :authenticate_user!, except: [:show, :index]
+  before_action :authenticate_user!, except: %i[show index]
 
-  # Задаем объект @event для экшена show
-  before_action :set_event, only: [:show]
+  before_action :set_event, only: %i[show edit update]
+
+  protect_from_forgery only: :password_guard!
 
   # Задаем объект @event от текущего юзера для других действий
-  before_action :set_current_user_event, only: [:edit, :update, :destroy]
+  before_action :set_current_user_event, only: %i[edit update destroy]
+
+  before_action :password_guard!, only: %i[show]
 
   def index
     @events = Event.all
@@ -53,6 +53,20 @@ class EventsController < ApplicationController
 
   private
 
+  def password_guard!
+    return true if @event.pincode.blank?
+    return true if signed_in? && current_user == @event.user
+
+    if params[:pincode].present? && @event.pincode_valid?(params[:pincode])
+      cookies.permanent["events_#{@event.id}_pincode"] = params[:pincode]
+    end
+
+    unless @event.pincode_valid?(cookies.permanent["events_#{@event.id}_pincode"])
+      flash.now[:alert] = I18n.t('controllers.events.wrong_pincode') if params[:pincode].present?
+      render 'password_form'
+    end
+  end
+
   def set_current_user_event
     @event = current_user.events.find(params[:id])
   end
@@ -62,6 +76,7 @@ class EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :address, :datetime, :description)
+    params.require(:event).permit(:title, :address, :datetime, :description,
+                                  :pincode)
   end
 end
