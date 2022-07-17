@@ -6,6 +6,7 @@ ruby '3.0.4'
 gem 'bootstrap-icons-helper'
 gem 'carrierwave'
 gem 'cssbundling-rails'
+gem 'dotenv-rails'
 gem "mini_magick"
 gem 'devise'
 gem 'devise-i18n'
