@@ -14,6 +14,7 @@ require "action_view/railtie"
 require "action_cable/engine"
 # require "rails/test_unit/railtie"
 
+require 'sprockets/railtie'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -22,7 +23,9 @@ module BBQ
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+
     config.i18n.default_locale = :ru
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -32,6 +35,13 @@ module BBQ
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Don't generate system test files.
+    config.generators.system_tests = nil
+  end
+end
+
+module Mailjet
+  class Application < Rails::Application
+    config.load_defaults 6.0
     config.generators.system_tests = nil
   end
 end
