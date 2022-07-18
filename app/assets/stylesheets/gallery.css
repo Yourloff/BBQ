@@ -1,0 +1,30 @@
+.lb-nav a.lb-prev {
+    background: url(prev.png) left 48% no-repeat;
+}
+
+.lb-nav a.lb-next {
+    background: url(next.png) right 48% no-repeat;
+}
+
+.lb-cancel {
+    background: url(loading.gif) no-repeat;
+}
+
+.lb-data .lb-close {
+    background: url(close.png) top right no-repeat;
+}
+
+.lb-dataContainer {
+    width: 820px !important;
+    background: #ffffff;
+    border: 10px solid #ffffff;
+    border-radius: 0 0 4px 4px;
+}
+
+.lb-outerContainer {
+    border-radius: 4px 4px 0 0;
+}
+
+.lightbox .lb-image {
+    border: 10px solid #ffffff;
+}

@@ -260,3 +260,8 @@ ru:
       extension_whitelist_error: "Вам не разрешено загружать файлы %{extension},
       разрешенные типы: %{allowed_types}"
       mini_magick_processing_error: "Может быть, это не изображение?"
+  photos:
+    photo:
+      added: Добавил
+      destroy_confirm: Вы уверены, что хотите удалить это фото?
+      upload: Добавить фото

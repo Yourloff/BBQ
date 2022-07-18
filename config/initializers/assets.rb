@@ -31,3 +31,5 @@ end
 Sprockets.register_postprocessor 'text/css', AssetUrlProcessor
 
 Rails.application.config.assets.precompile += %w[application.js]
+
+Rails.application.config.assets.precompile += %w( lightbox/* )

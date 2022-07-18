@@ -1,0 +1,49 @@
+/*
+ *= require lightbox2
+ *= require jquery
+ *= require_tree .
+ *= require_self
+ */
+
+/*
+/* Avatars for users & events */
+.img-icon, .img-icon-small {
+    height: 30px;
+    width: auto;
+    border-radius: 50%;
+}
+
+.thumbnail {
+    position: relative;
+    background: transparent;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.thumbnail h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 0;
+    margin-bottom: .3em;
+}
+
+.thumbnail-inner {
+    padding: 4px;
+}
+
+a {
+    text-decoration: none;
+}
+.field_with_errors {
+    display: contents;
+}
+.delete {
+    font-size: 10px;
+}
+.social-logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: none;
+}

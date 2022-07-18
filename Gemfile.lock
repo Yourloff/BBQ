@@ -127,6 +127,8 @@ GEM
     jsbundling-rails (1.0.2)
       railties (>= 6.0.0)
     json (2.6.2)
+    lightbox2-rails (2.8.2.1)
+      railties (>= 3.1)
     loofah (2.18.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
@@ -164,6 +166,8 @@ GEM
     public_suffix (4.0.7)
     puma (5.6.4)
       nio4r (~> 2.0)
+    pundit (2.2.0)
+      activesupport (>= 3.0.0)
     racc (1.6.0)
     rack (2.2.3)
     rack-test (1.1.0)
@@ -275,10 +279,12 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   jsbundling-rails
+  lightbox2-rails
   material_icons
   mini_magick
   pg
   puma (~> 5.0)
+  pundit (~> 2.2)
   rails (~> 7.0.2, >= 7.0.2.4)
   rails-i18n
   rails_12factor

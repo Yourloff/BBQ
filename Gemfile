@@ -10,6 +10,7 @@ gem 'dotenv-rails'
 gem "mini_magick"
 gem 'devise'
 gem 'devise-i18n'
+gem 'lightbox2-rails'
 gem 'material_icons'
 gem 'rails-i18n'
 gem 'recaptcha', require: 'recaptcha/rails'
@@ -39,3 +40,5 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+
+gem "pundit", "~> 2.2"
