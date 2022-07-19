@@ -7,6 +7,8 @@ class PhotosController < ApplicationController
   # Обратите внимание: фотку может сейчас добавить даже неавторизованный пользовать
   # Смотрите домашки!
   def create
+    authorize @new_photo
+
     # Создаем новую фотографию у нужного события @event
     @new_photo = @event.photos.build(photo_params)
 
@@ -23,6 +25,8 @@ class PhotosController < ApplicationController
   end
 
   def destroy
+    authorize @new_photo
+    
     message = { notice: I18n.t('controllers.photos.destroyed') }
 
     # Проверяем, может ли пользователь удалить фотографию

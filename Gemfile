@@ -22,7 +22,6 @@ gem 'puma', '~> 5.0'
 gem 'jsbundling-rails'
 gem 'turbo-rails'
 gem 'stimulus-rails'
-gem 'sprockets-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
