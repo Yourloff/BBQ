@@ -10,7 +10,6 @@ class PhotoPolicy < ApplicationPolicy
   private
 
   def user_is_owner?(photo)
-    #owner of photo or owner of event
     user.present? && ((photo.user == user) || (photo.event.try(:user) == user))
   end
 end
