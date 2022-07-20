@@ -5,8 +5,8 @@ ruby '3.0.4'
 
 gem 'bootstrap-icons-helper'
 gem 'carrierwave'
+gem 'cloudinary'
 gem 'cssbundling-rails'
-gem 'dotenv-rails'
 gem "mini_magick"
 gem 'devise'
 gem 'devise-i18n'
@@ -33,6 +33,7 @@ end
 
 group :development do
   gem 'web-console'
+  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 end
 
 group :production do
