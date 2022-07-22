@@ -34,7 +34,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :cloudinary
+  config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
@@ -76,7 +76,7 @@ Rails.application.configure do
     domain: 'yandex.ru',
     port: '465',
     user_name: 'alex.orloff99@yandex.ru',
-    password: '23shemonaihaSHARP!',
+    password: '',
     authentication: 'plain',
     enable_starttls_auto: true
   }

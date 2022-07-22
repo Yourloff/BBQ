@@ -42,3 +42,5 @@ public/uploads/
 
 .idea
 .env
+
+config/database.yml
