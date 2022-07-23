@@ -24,7 +24,7 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 gem 'jquery-rails'
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
-gem 'whenever', require: false
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 group :development, :test do
   gem 'debug'
@@ -33,7 +33,6 @@ end
 
 group :development do
   gem 'web-console'
-  gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 end
 
 group :production do
