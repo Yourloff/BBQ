@@ -29,7 +29,7 @@ gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 group :development, :test do
-  gem 'debug'
+  gem 'byebug'
 end
 
 group :development do
