@@ -1,12 +1,11 @@
 <h1><%= t('.title') %></h1>
-<%= image_tag(@photo.photo.thumb.url) %>
+<%= image_tag(@photo.photo.url) %>
 <p><%= t('.author') %>: <strong><%= @photo.user.name %></strong></p>
 
 <hr/>
 
 <%= t('.event') %>
-<h3><%= sanitize link_to(@event.title, event_url(locale, @event)),
-                 tags: ['a'], attributes: ['href']%>
+<h3><%= link_to(@event.title, event_url(@event)) %>
 </h3>
 <%= t('.datetime') %>
 <h4><%= l @event.datetime, format: :short %></h4>
