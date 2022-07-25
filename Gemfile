@@ -11,6 +11,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'lightbox2-rails'
 gem 'material_icons'
+gem 'pg'
 gem 'rails-i18n'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
@@ -28,7 +29,6 @@ gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 group :development, :test do
   gem 'debug'
-  gem 'sqlite3'
 end
 
 group :development do
@@ -36,7 +36,6 @@ group :development do
 end
 
 group :production do
-  gem 'pg'
   gem 'rails_12factor'
 end
 
