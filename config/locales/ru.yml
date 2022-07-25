@@ -275,3 +275,10 @@ ru:
   layouts:
     application:
       brand: "BBQ"
+  event_mailer:
+    photo:
+      title: "Новая фотография"
+      author: "Автор"
+      event: "Событие"
+      datetime: "Состоится"
+      owner: "Организатор"
