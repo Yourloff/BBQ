@@ -28,8 +28,16 @@ gem 'jquery-rails'
 gem 'tzinfo-data', platforms: %i[ mingw mswin x64_mingw jruby ]
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
+gem 'ed25519', '~> 1.2'
+gem 'bcrypt_pbkdf', '~> 1'
+
 group :development, :test do
   gem 'byebug'
+  gem 'capistrano', '~> 3.8'
+  gem 'capistrano-rails', '~> 1.2'
+  gem 'capistrano-passenger', '~> 0.2'
+  gem 'capistrano-rbenv', '~> 2.1'
+  gem 'capistrano-bundler', '~> 1.2'
 end
 
 group :development do
