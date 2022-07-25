@@ -95,9 +95,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_deliveries = true
 
-  config.action_mailer.default_options = { from: 'bbq@yourloff.ru' }
+  config.action_mailer.default_options = { from: ENV['MAILER_SENDER'] }
 
-  config.action_mailer.default_url_options = { host: 'yourloff.ru' }
+  config.action_mailer.default_url_options = { host: ENV['HOST'] }
 
   config.action_mailer.delivery_method = :sendmail
 end
