@@ -44,4 +44,3 @@ public/uploads/
 .env
 
 config/database.yml
-bbq_development
