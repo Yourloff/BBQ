@@ -194,3 +194,6 @@ en:
       extension_whitelist_error: "You are not allowed to upload files %{extension},
       allowed types: %{allowed_types}"
       mini_magick_processing_error: Maybe it's not an image?
+  layouts:
+    application:
+      brand: "BBQ"

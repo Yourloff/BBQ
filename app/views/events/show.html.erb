@@ -54,18 +54,22 @@
     </div>
     <div class="col-md-4">
       <div class="event-owner">
-        <h4>Зовет:</h4>
+        <h4><%= t('views.text.event.calls') %>:</h4>
         <p><%= render partial: 'users/user', object: @event.user %></p>
       </div>
-      <div class="event-subscriptions">
-        <h4>Пойдут:</h4>
-        <div>
+
+      <% if @event.subscriptions.size == 1 %>
+        <p><%= t('views.text.event.subscribers_list') %></p>
+      <% else %>
+        <div class="event-subscriptions">
+          <h4><%= t('views.text.event.go') %>:</h4>
           <%= render(
                 partial: 'subscriptions/subscription',
                 collection: @event.subscriptions.except(@new_subscription)
               ) %>
         </div>
-      </div>
+      <% end %>
+
       <% unless user_signed_in? %>
         <div class="event-subscription-form">
           <h4>Я пойду:</h4>

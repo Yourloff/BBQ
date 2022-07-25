@@ -107,6 +107,11 @@ ru:
         header: Новое событие
     photos:
       upload: Загрузить
+    text:
+      event:
+        subscribers_list: "Еще никто не присоединился"
+        go: "Пойдут"
+        calls: "Зовёт"
   app:
     name: Шашлыки
     company: Хорошие шашлыки
@@ -267,3 +272,6 @@ ru:
       upload: Добавить фото
   pundit:
     not_authorized: "У вас нет прав на выполнение этого действия"
+  layouts:
+    application:
+      brand: "BBQ"
