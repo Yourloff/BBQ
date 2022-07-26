@@ -7,7 +7,8 @@ document.addEventListener('turbo:load', () => {
         'resizeDuration': 200,
         'wrapAround': true,
         'fadeDuration': 200,
-        'imageFadeDuration': 200
+        'imageFadeDuration': 200,
+        'fitImagesInViewport': true
     })
 })
 
