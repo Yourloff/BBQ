@@ -83,6 +83,13 @@ ru:
       edit:
         header: Редактирование профиля
         change_password: Сменить пароль
+      password:
+        edit:
+          title: Измените свой пароль
+          new_password: Новый пароль
+          limit: минимум символов
+          confirm_new_password: Подтвердите новый пароль
+          action: Сменить пароль
       show:
         organized: Организовал
         not_organized: Не организовал ни одного события
