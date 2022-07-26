@@ -12,6 +12,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'lightbox2-rails'
 gem 'material_icons'
+gem 'sass', '~> 3.4', '>= 3.4.22'
 gem 'sass-rails'
 gem 'pg'
 gem 'rails-i18n'
@@ -20,6 +21,7 @@ gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
 gem 'russian'
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'puma', '~> 5.0'
+gem "pundit", "~> 2.2"
 gem 'jbuilder'
 gem 'jsbundling-rails'
 gem 'turbo-rails'
@@ -38,6 +40,9 @@ group :development, :test do
   gem 'capistrano-passenger', '~> 0.2'
   gem 'capistrano-rbenv', '~> 2.1'
   gem 'capistrano-bundler', '~> 1.2'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -48,5 +53,3 @@ end
 group :production do
   gem 'rails_12factor'
 end
-
-gem "pundit", "~> 2.2"

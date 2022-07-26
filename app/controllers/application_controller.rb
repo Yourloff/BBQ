@@ -9,16 +9,24 @@ class ApplicationController < ActionController::Base
 
   helper_method :current_user_can_edit?
 
-  protected
-
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :email])
+    devise_parameter_sanitizer.permit(
+      :sign_up,
+      keys: [:email, :name, :password, :password_confirmation]
+    )
+
+    devise_parameter_sanitizer.permit(
+      :account_update,
+      keys: [:password, :password_confirmation, :current_password]
+    )
   end
 
   def current_user_can_edit?(model)
     user_signed_in? &&
-      (model.user == current_user || (model.try(:event).present? && model.event.user == current_user))
+      (model.user == current_user || model.try(:event).try(:user) == current_user)
   end
+
+  private
 
   def user_not_authorized
     flash[:alert] = t('pundit.not_authorized')
