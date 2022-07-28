@@ -79,6 +79,34 @@ ru:
       destroyed: Вы удалили фотку
   views:
     back: Назад
+    submit: Отправить
+    update: Обновить
+    devise:
+      links:
+        new_session: Войти
+        new_registration: Зарегистрироваться
+        new_password: Забыли свой пароль?
+        new_confirmation: Не получили инструкции по подтверждению?
+        new_unlock: Не получили инструкций по разблокировке?
+        omniauth_authorize: Войдите в систему с помощью
+      sessions:
+        title: Вход
+        submit: Войти
+      registrations:
+        edit:
+          password_change: Смена пароля
+          unconfirmed_email: В настоящее время ожидает подтверждения для
+          label_password: Оставьте пустым, если не хотите его менять
+          password_length: минимум символов
+        new:
+          registration: Регистрация
+          email_help: Мы никогда не передадим вашу электронную почту кому-либо еще
+          submit: Зарегистрироваться
+          new_password: Забыли свой пароль?
+      new:
+        forgot_your_password: Забыли свой пароль?
+        send_me_instructions: Пришлите мне инструкции по сбросу пароля
+
     users:
       edit:
         header: Редактирование профиля
@@ -108,10 +136,22 @@ ru:
       subscription:
         submit_text: Подписаться
     events:
+      form:
+        submit: Сохранить
+        back: Назад
+      edit:
+        title: Редактирование мероприятия
       index:
         create: Создать событие
+        title: Зови друзей на шашлыки!
       new:
         header: Новое событие
+      password_form:
+        title: Доступ только по пин-коду
+        submit: Войти
+        main_page: На главную
+      show:
+        edit_event: Изменить
     photos:
       upload: Загрузить
     text:
@@ -286,6 +326,18 @@ ru:
     photo:
       title: "Новая фотография"
       author: "Автор"
+      event: "Событие"
+      datetime: "Состоится"
+      owner: "Организатор"
+    comment:
+      author: "Автор"
+      title: "Новый комментарий"
+      event: "Событие"
+      datetime: "Состоится"
+      owner: "Комментатор"
+    subscription:
+      name: "Имя"
+      email: "Email"
       event: "Событие"
       datetime: "Состоится"
       owner: "Организатор"

@@ -1,4 +1,4 @@
-<h2>Забыли свой пароль?</h2>
+<h2><%= t('views.devise.new.forgot_your_password') %></h2>
 
 <%= form_for(resource, as: resource_name, data: { turbo: false }, url: password_path(resource_name), html: { method: :post }) do |f| %>
   <%= render "devise/shared/error_messages", resource: @user %>
@@ -9,7 +9,7 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Пришлите мне инструкции по сбросу пароля", class: "btn btn-primary" %>
+    <%= f.submit t('views.devise.new.send_me_instructions'), class: "btn btn-primary" %>
   </div>
 <% end %>
 

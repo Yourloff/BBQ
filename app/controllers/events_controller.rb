@@ -1,12 +1,13 @@
 class EventsController < ApplicationController
   before_action :authenticate_user!, except: %i[show index]
   before_action :set_event, only: %i[destroy edit show update]
-  after_action :verify_authorized, only: %i[destroy edit show update]
 
-  protect_from_forgery only: :show
+  after_action :verify_authorized, only: %i[index destroy edit show update]
 
   def index
     @events = Event.all
+
+    authorize @events
   end
 
   def show
@@ -14,7 +15,6 @@ class EventsController < ApplicationController
 
     event_context = EventContext.new(event: @event, pincode: pincode)
     authorize event_context, policy_class: EventPolicy
-
     cookies.permanent["events_#{@event.id}_pincode"] = pincode
 
     @new_comment = @event.comments.build(params[:comment])

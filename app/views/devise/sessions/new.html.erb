@@ -1,4 +1,4 @@
-<h2>Вход</h2>
+<h2><%= t('views.devise.sessions.title') %></h2>
 
 <%= form_for(resource, as: resource_name, data: { turbo: false }, url: session_path(resource_name)) do |f| %>
   <%= render partial: 'partials/form_errors', locals: { errors: @user.errors } %>
@@ -21,7 +21,7 @@
   <% end %>
 
   <div class="actions">
-    <%= f.submit 'Войти', class: 'btn btn-primary' %>
+    <%= f.submit t('views.devise.sessions.submit'), class: 'btn btn-primary' %>
   </div>
 <% end %>
 

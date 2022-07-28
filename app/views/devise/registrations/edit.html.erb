@@ -1,4 +1,4 @@
-<h2>Смена пароля</h2>
+<h2><%= t('views.devise.registrations.edit.password_change') %></h2>
 
 <%= form_for(resource, as: resource_name, data: { turbo: false }, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: @user %>
@@ -9,15 +9,15 @@
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <div><%= t('views.devise.registrations.edit.unconfirmed_email') %>: <%= resource.unconfirmed_email %></div>
   <% end %>
 
   <div class="mb-3">
-    <%= f.label :password %> <i>(оставьте пустым, если не хотите его менять)</i><br/>
+    <%= f.label :password %> <i>(<%= t('views.devise.registrations.edit.label_password') %>)</i><br/>
     <%= f.password_field :password, autocomplete: "new-password" %>
     <% if @minimum_password_length %>
       <br/>
-      <em><%= @minimum_password_length %> минимум символов</em>
+      <em><%= @minimum_password_length %> <%= t('views.devise.registrations.edit.password_length') %></em>
     <% end %>
   </div>
 
@@ -32,10 +32,10 @@
   </div>
 
   <div class="actions">
-    <%= f.submit "Обновить", class: "btn btn-primary" %>
+    <%= f.submit t('views.update'), class: "btn btn-primary" %>
   </div>
 <% end %>
 
 <div class="mt-3">
-  <%= link_to "Назад", :back %>
+  <%= link_to t('views.back'), :back %>
 </div>
