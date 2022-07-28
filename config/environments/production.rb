@@ -27,7 +27,7 @@ Rails.application.configure do
   config.serve_static_assets = true
 
   # Compress CSS using a preprocessor.
-  config.assets.css_compressor = true
+  config.assets.css_compressor = :uglifier
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
