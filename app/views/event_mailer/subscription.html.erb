@@ -2,7 +2,7 @@
 <p><%= I18n.t('subscriptions.subscription.event_mailer.subscription.name') %>: <strong><%= @name %></strong></p>
 <p><%= I18n.t('subscriptions.subscription.event_mailer.subscription.email') %>: <strong><%= mail_to @email %></strong></p>
 <hr/>
-
+<% byebug %>
 <%= I18n.t('subscriptions.subscription.event_mailer.subscription.event') %>
 
 <h3><%= @event.title %></h3>
