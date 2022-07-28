@@ -15,10 +15,8 @@
 }
 
 .lb-dataContainer {
-    width: 820px !important;
+    width: auto;
     background: #ffffff;
-    border: 10px solid #ffffff;
-    border-radius: 0 0 4px 4px;
 }
 
 .lb-outerContainer {
