@@ -5,12 +5,10 @@ class User < ApplicationRecord
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :subscriptions, dependent: :destroy
-
   has_many :events
 
   validates :name, presence: true, length: { maximum: 35 }
-  validates :email, length: { maximum: 255 }
-  validates :email, uniqueness: true
+  validates :email, length: { maximum: 255 }, uniqueness: true
 
   before_validation :set_name, on: :create
 

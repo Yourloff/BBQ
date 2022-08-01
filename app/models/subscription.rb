@@ -9,8 +9,7 @@ class Subscription < ApplicationRecord
 
   with_options unless: -> { user.present? } do
     validates :user_name, presence: true
-    validates :user_email, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
-    validates :user_email, uniqueness: { scope: :event_id }
+    validates :user_email, uniqueness: { scope: :event_id }, presence: true, format: /\A[a-zA-Z0-9\-_.]+@[a-zA-Z0-9\-_.]+\z/
     validate :check_exist_email
   end
 

@@ -44,3 +44,4 @@ public/uploads/
 .env
 
 config/database.yml
+.byebug_history
