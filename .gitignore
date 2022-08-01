@@ -40,7 +40,6 @@ public/uploads/
 
 /node_modules
 
-.idea
 .env
 
 config/database.yml
