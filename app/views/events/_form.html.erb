@@ -28,6 +28,7 @@
 
   <div class="actions mb-2">
     <%= f.submit t('views.events.form.submit'), class: 'btn btn-primary' %>
-    или <%= link_to t('views.events.form.back'), :back %>
+    <%= t('views.events.form.or') %>
+    <%= link_to t('views.events.form.back'), :back %>
   </div>
 <% end %>

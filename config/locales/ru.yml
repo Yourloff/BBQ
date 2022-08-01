@@ -139,6 +139,7 @@ ru:
       form:
         submit: Сохранить
         back: Назад
+        or: или
       edit:
         title: Редактирование мероприятия
       index:
