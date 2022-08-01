@@ -153,13 +153,16 @@ ru:
         main_page: На главную
       show:
         edit_event: Изменить
+        confirm: Вы действительно хотите удалить событие?
+        delete_event: Удалить событие
+        delete: Удалить
     photos:
       upload: Загрузить
     text:
       event:
-        subscribers_list: "Еще никто не присоединился"
-        go: "Пойдут"
-        calls: "Зовёт"
+        subscribers_list: Еще никто не присоединился
+        go: Пойдут
+        calls: Зовёт
   app:
     name: Шашлыки
     company: Хорошие шашлыки
