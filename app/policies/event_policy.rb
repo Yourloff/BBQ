@@ -39,4 +39,10 @@ class EventPolicy < ApplicationPolicy
 
     event_context.pincode.present? && event_context.event.pincode_valid?(event_context.pincode)
   end
+
+  class Scope < Scope
+    def resolve
+      scope.all
+    end
+  end
 end
