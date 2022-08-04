@@ -19,6 +19,6 @@
 
   <div class="actions">
     <%= f.submit I18n.t('views.users.save'), class: 'btn btn-primary' %>
-    или <%= link_to I18n.t('views.back'), :back %>
+    <%= t('views.users.form.or') %> <%= link_to I18n.t('views.back'), :back %>
   </div>
 <% end %>

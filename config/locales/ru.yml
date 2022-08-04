@@ -122,6 +122,8 @@ ru:
         organized: Организовал
         not_organized: Не организовал ни одного события
       save: Сохранить
+      form:
+        or: "или"
     application:
       profile: Профиль
       destroy: Выйти
@@ -158,6 +160,8 @@ ru:
         delete: Удалить
     photos:
       upload: Загрузить
+      photo:
+        add: "Добавил"
     text:
       event:
         subscribers_list: Еще никто не присоединился
