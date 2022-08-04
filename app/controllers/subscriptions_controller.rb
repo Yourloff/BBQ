@@ -42,7 +42,7 @@ class SubscriptionsController < ApplicationController
   end
 
   def notify_subscription(event, subscription)
-    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [event.user.email]).uniq
+    all_emails = (event.subscriptions.map(&:user_email) + [event.user.email]).uniq
 
     all_emails.each do |mail|
       EventMailer.subscription(subscription, mail).deliver_now
