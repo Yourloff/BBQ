@@ -6,6 +6,7 @@ ruby '3.0.4'
 gem 'bootsnap', require: false
 gem 'bootstrap-icons-helper'
 gem 'carrierwave'
+gem "capistrano-resque", "~> 0.2.2", require: false
 gem 'cssbundling-rails'
 gem "mini_magick"
 gem 'devise'
@@ -13,6 +14,7 @@ gem 'devise-i18n'
 gem 'lightbox2-rails'
 gem 'material_icons'
 gem 'pg'
+gem 'resque'
 gem 'rails-i18n'
 gem 'recaptcha', require: 'recaptcha/rails'
 gem 'rails', '~> 7.0.2', '>= 7.0.2.4'
