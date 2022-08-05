@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :photos
-  devise_for :users
+  devise_for :users, controller: { omniauth_callback: 'users/omniauth_callbacks' }
   resources :users, only: [:show, :edit, :update]
   root "events#index"
 
