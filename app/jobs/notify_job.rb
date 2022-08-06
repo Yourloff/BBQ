@@ -11,6 +11,8 @@ class NotifyJob < ApplicationJob
     all_emails = (event.subscriptions.map(&:user_email) + [event.user.email] - [record.user&.email]).uniq
 
     case record
+    when Photo
+      all_emails.each { |mail| EventMailer.photo(record, mail).deliver_later }
     when Comment
       all_emails.each { |mail| EventMailer.comment(record, mail).deliver_later }
     when Subscription
