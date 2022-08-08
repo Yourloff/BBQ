@@ -15,8 +15,6 @@ class NotifyJob < ApplicationJob
       all_emails.each { |mail| EventMailer.photo(record, mail).deliver_later }
     when Comment
       all_emails.each { |mail| EventMailer.comment(record, mail).deliver_later }
-    when Subscription
-      all_emails.each { |mail| EventMailer.photo(record, mail).deliver_later }
     end
   end
 end
