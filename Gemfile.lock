@@ -405,6 +405,7 @@ DEPENDENCIES
   lightbox2-rails
   material_icons
   mini_magick
+  omniauth
   omniauth-github!
   omniauth-rails_csrf_protection
   omniauth-vkontakte
