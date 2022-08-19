@@ -14,7 +14,6 @@ gem 'devise-i18n'
 gem 'lightbox2-rails'
 gem 'material_icons'
 gem "omniauth-rails_csrf_protection"
-gem 'omniauth'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
 gem 'omniauth-vkontakte'
 gem 'pg'
