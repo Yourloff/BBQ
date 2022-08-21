@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'omniauth-github'
+
 # Assuming you have not yet modified this file, each configuration option below
 # is set to its default value. Note that some are commented out while others
 # are not: uncommented lines are intended to protect your configuration from
@@ -271,7 +273,17 @@ Devise.setup do |config|
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
-  config.omniauth :github, ENV['GITHUB_APP_ID'], ENV['GITHUB_APP_SECRET'], scope: 'user,user:email'
+
+  config.omniauth :github, Rails.application.credentials.dig(:github, :github_client_id),
+                  Rails.application.credentials.dig(:github, :github_client_secret), scope: 'user:email'
+
+  config.omniauth :vkontakte, Rails.application.credentials.dig(:vkontakte, :vk_client_id),
+                  Rails.application.credentials.dig(:vkontakte, :vk_client_secret),
+                  {
+                    scope: 'email',
+                    https: 0,
+                    lang: 'ru',
+                  }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

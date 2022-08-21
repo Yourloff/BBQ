@@ -167,6 +167,10 @@ ru:
         subscribers_list: Еще никто не присоединился
         go: Пойдут
         calls: Зовёт
+      user:
+        enter: "Войти с помощью:"
+    links:
+      login: "Войти"
   app:
     name: Шашлыки
     company: Хорошие шашлыки
@@ -349,3 +353,6 @@ ru:
       event: "Событие"
       datetime: "Состоится"
       owner: "Организатор"
+  profile_sign: "Вход невозможен, т.к. в профиле %{kind} отсутствует подтверждённый email"
+  omniauth:
+    failure: "Авторизоваться не удалось!"
