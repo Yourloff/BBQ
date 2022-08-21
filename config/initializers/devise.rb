@@ -278,13 +278,7 @@ Devise.setup do |config|
                   Rails.application.credentials.dig(:github, :github_client_secret), scope: 'user:email'
 
   config.omniauth :vkontakte, Rails.application.credentials.dig(:vkontakte, :vk_client_id),
-                  Rails.application.credentials.dig(:vkontakte, :vk_client_secret),
-                  {
-                    scope: 'email',
-                    https: 0,
-                    lang: 'ru',
-                    redirect_uri: 'http://yourloff.ru/users/auth/vkontakte/callback'
-                  }
+                  Rails.application.credentials.dig(:vkontakte, :vk_client_secret), scope: 'email'
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
