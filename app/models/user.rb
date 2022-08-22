@@ -41,19 +41,10 @@ class User < ApplicationRecord
   end
 
   def self.find_for_vkontakte_oauth(access_token)
-    email = access_token.info.email
-
-    user = where(email: email).first
-    return user if user.present?
-
-    provider = access_token.provider
-    provider_id = access_token.extra.raw_info.id
-    name = access_token.info.name
-
-    where(provider_id: provider_id, provider: provider).first_or_create! do |user|
-      user.name = name
-      user.email = email
-      user.password = Devise.friendly_token.first[0, 20]
+    if user = User.where(:url => access_token.info.urls.Vkontakte).first
+      user
+    else
+      User.create!(:provider => access_token.provider, :url => access_token.info.urls.Vkontakte, :username => access_token.info.name, :nickname => access_token.extra.raw_info.domain, :email => access_token.extra.raw_info.domain+'<hh user=vk>.com', :password => Devise.friendly_token[0,20])
     end
   end
 end
