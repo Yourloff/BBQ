@@ -26,8 +26,6 @@ class User < ApplicationRecord
     Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
   end
 
-  private
-
   def self.find_for_github_oauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
@@ -41,20 +39,25 @@ class User < ApplicationRecord
   end
 
   def self.find_for_vkontakte_oauth(access_token)
-    email = access_token.info.email
+    create_from_oauth(
+      email: access_token.info.email,
+      name: access_token.info.name,
+      url: access_token.info.urls[:Vkontakte],
+      provider: :vkontakte
+    )
+  end
 
-    user = where(email: email).first
-    return user if user.present?
+  private
 
-    provider = access_token.provider
-    id = access_token.extra.raw_info.id
-    url = "http://vk.com/id#{id}"
-    name = access_token.info.name
+  def self.create_from_oauth(params)
+    email = params[:email]
 
-    where(url: url, provider: provider).first_or_create! do |user|
-      user.name = name
-      user.email = email
+    where(email: email).first_or_create! do |user|
+      user.name = params[:name]
+      user.url = params[:url]
+      user.provider = params[:provider]
       user.password = Devise.friendly_token.first(16)
     end
   end
+
 end
