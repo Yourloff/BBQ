@@ -281,7 +281,7 @@ Devise.setup do |config|
                   {
                     scope: 'email',
                     lang: 'ru',
-                    https: 0,
+                    https: 1,
                   }
 
   # ==> Warden configuration
