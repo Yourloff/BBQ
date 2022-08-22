@@ -282,7 +282,6 @@ Devise.setup do |config|
                     scope: 'email',
                     lang: 'ru',
                     https: 0,
-                    redirect_uri: 'http://yourloff.ru/users/auth/vkontakte/callback'
                   }
 
   # ==> Warden configuration
