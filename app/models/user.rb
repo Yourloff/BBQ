@@ -12,7 +12,6 @@ class User < ApplicationRecord
   validates :email, length: { maximum: 255 }, uniqueness: true
 
   before_validation :set_name, on: :create
-  before_validation :set_email, on: :create
 
   after_commit :link_subscriptions, on: :create
 
@@ -46,11 +45,5 @@ class User < ApplicationRecord
       user.name = auth.info.name
       user.avatar = auth.info.image
     end
-  end
-
-  private
-
-  def set_email
-    self.email = "change@me.example" if self.email.blank?
   end
 end
