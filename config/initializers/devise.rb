@@ -277,11 +277,7 @@ Devise.setup do |config|
   config.omniauth :github, Rails.application.credentials.dig(:github, :github_client_id),
                   Rails.application.credentials.dig(:github, :github_client_secret), scope: 'user:email'
 
-  config.omniauth :vkontakte, Rails.application.credentials.dig(:vkontakte, :vk_client_id), Rails.application.credentials.dig(:vkontakte, :vk_client_secret),
-                  {
-                    scope: 'email',
-                    image_size: 'original'
-                  }
+  config.omniauth :vkontakte, Rails.application.credentials.dig(:vkontakte, :vk_client_id), Rails.application.credentials.dig(:vkontakte, :vk_client_secret)
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

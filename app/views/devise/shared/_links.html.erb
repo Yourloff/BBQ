@@ -22,8 +22,9 @@
   <%- resource_class.omniauth_providers.each do |provider| %>
     <%= button_to t('devise.shared.links.sign_in_with_provider', provider: OmniAuth::Utils.camelize(provider)),
                   omniauth_authorize_path(resource_name, provider),
-                  method: :post,
                   data: { turbo: false },
                   class: 'btn btn-outline-secondary my-1' %>
   <% end %>
 <% end %>
+
+<%= link_to "Sign in with VK", user_vkontakte_omniauth_authorize_path, class: 'btn btn-primary' %>

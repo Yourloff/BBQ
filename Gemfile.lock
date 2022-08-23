@@ -415,7 +415,7 @@ DEPENDENCIES
   omniauth
   omniauth-github!
   omniauth-rails_csrf_protection
-  omniauth-vkontakte
+  omniauth-vkontakte (~> 1.8)
   pg
   puma (~> 5.0)
   pundit (~> 2.2)

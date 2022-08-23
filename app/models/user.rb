@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :omniauthable, omniauth_providers: [:github, :vkontakte]
+         :omniauthable, omniauth_providers: [:vkontakte, :github]
 
   has_many :events, dependent: :destroy
   has_many :comments, dependent: :destroy
@@ -12,6 +12,7 @@ class User < ApplicationRecord
   validates :email, length: { maximum: 255 }, uniqueness: true
 
   before_validation :set_name, on: :create
+  before_validation :set_email, on: :create
 
   after_commit :link_subscriptions, on: :create
 
@@ -58,6 +59,10 @@ class User < ApplicationRecord
       user.provider = params[:provider]
       user.password = Devise.friendly_token.first(16)
     end
+  end
+
+  def set_email
+    self.email = "change@me.example" if self.email.blank?
   end
 
 end
