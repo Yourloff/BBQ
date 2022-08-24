@@ -18,13 +18,6 @@ class User < ApplicationRecord
   mount_uploader :avatar, AvatarUploader
   serialize :avatar, JSON
 
-  def set_name
-    self.name = "Агент #{rand(777)}" if self.name.blank?
-  end
-
-  def link_subscriptions
-    Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
-  end
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
@@ -35,5 +28,15 @@ class User < ApplicationRecord
       )
     end
     user
+  end
+
+  private
+
+  def set_name
+    self.name = "Агент #{rand(777)}" if self.name.blank?
+  end
+
+  def link_subscriptions
+    Subscription.where(user_id: nil, user_email: self.email).update_all(user_id: self.id)
   end
 end
