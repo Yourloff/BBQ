@@ -1,24 +1,59 @@
-# README
+#### BBQ
+Ruby on Rails приложение для создания событий,
+приглашения друзей на мероприятие, для общения внутри мероприятия,
+для отправки информации о мероприятии, размещения фотографий.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Запуск программы**
 
-Things you may want to cover:
+*Клонировать репозиторий:*
+```
+git clone https://github.com/Yourloff/BBQ.git
+```
 
-* Ruby version
+*Установить библиотеки:*
+```
+bundle install
+```
 
-* System dependencies
+*Выполните команду:*
+```
+EDITOR=vim rails credentials:edit
+```
+*и в файле credentials.yml.enc заполните все ключи из credentials.yml.enc.sample*
 
-* Configuration
+*Прописать необходимые ключи в файле*
+```
+.env
+```
 
-* Database creation
+*Запустите миграции:*
+```
+rails db:migrate
+```
 
-* Database initialization
+*Соберите js файлы:*
+```
+yarn install
+```
 
-* How to run the test suite
+*Установить mini_magick:*
+```
+sudo apt install ruby-mini-magick
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+*Запустите сервер:*
+```
+rails s
+```
 
-* Deployment instructions
-
-* ...
+#### Реализованный функционал:
+- Интернационализация (ru, en), i18n
+- Мероприятия: создание, редактирование, удаление
+- Отображение места мероприятия на Яндекс карте
+- Пин-код для события
+- Комментарии для события
+- Подписки на событие
+- Отправка почты (yandex)
+- Редактирование профиля
+- Работа с изображениями (mini_magick, carrierwave, lightbox2)
+- Аутентификация (Devise)
