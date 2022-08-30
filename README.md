@@ -15,13 +15,7 @@ git clone https://github.com/Yourloff/BBQ.git
 bundle install
 ```
 
-*Выполните команду:*
-```
-EDITOR=vim rails credentials:edit
-```
-*и в файле credentials.yml.enc заполните все ключи из credentials.yml.enc.sample*
-
-*Прописать необходимые ключи в файле*
+*Прописать необходимые ключи в файле:*
 ```
 .env
 ```
